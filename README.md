@@ -39,7 +39,7 @@ This is a web application that allows a user to post a project they have created
 No known bugs.
 
 ## Contact Information
-If you need clarification on any aspect, feel free to reach me via email at siguneema@gmail.com
+If you need clarification, feel free to reach me via email at siguneema@gmail.com
 
 ## License
 [MIT License MIT](LICENSE) Copyright (c) 2019 Naomi Sigu
