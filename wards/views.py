@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Profile, Projects
 from django.contrib.auth.models import User
-from . forms import UpdateUser,UpdateProfile, ProjectsFormfrom django.contrib import messages
+from . forms import UpdateUser,UpdateProfile, ProjectsForm
+from django.contrib import messages
 from django.db.models import Q
 from django.views.generic import CreateView
 # Create your views here.
