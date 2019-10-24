@@ -21,7 +21,7 @@ def profile(request):
   current_user = request.user
   projects = Projects.objects.filter(user_id = current_user.id).all
   return render(request,'profile.html',{"projects":projects})   
-   
+
 @login_required
 def update_profile(request):
   if request.method == 'POST':
@@ -41,6 +41,7 @@ def update_profile(request):
     'p_form':p_form
   }
   return render(request,'update_profile.html', params)
+  
 @login_required(login_url='/accounts/login/')
 def search(request):
    if 'title' in request.GET and request.GET['title']:
