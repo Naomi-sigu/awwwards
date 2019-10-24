@@ -9,6 +9,7 @@ from django.views.generic import CreateView
 
 # Create your views here.
 
+
 @login_required(login_url='/accounts/login/')
 def welcome(request):
     current_user = request.user
