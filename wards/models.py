@@ -44,7 +44,7 @@ class Projects(models.Model):
         projects = Projects.objects.filter(user=id)
         return projects
 
-     @classmethod
+    @classmethod
     def search_by_title(cls,search_term):
         projects = cls.objects.filter(title__icontains=search_term)
         return projects   
