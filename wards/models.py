@@ -38,7 +38,6 @@ class Projects(models.Model):
     def get_all_projects(cls):
         projects = Projects.objects.all()
         return projects
-     
     @classmethod
     def get_post(cls, id):
         projects = Projects.objects.filter(user=id)
