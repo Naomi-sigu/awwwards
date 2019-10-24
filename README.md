@@ -1,4 +1,4 @@
-AWward
+# AWARDS
 19 October 2019
 By Naomi Sigu
 
@@ -42,4 +42,4 @@ No known bugs.
 If you need clarification on any aspect, feel free to reach me via email at siguneema@gmail.com
 
 ## License
-(MIT License) [MIT] Copyright (c) 2019 Naomi Sigu
+[MIT License MIT](LICENSE) Copyright (c) 2019 Naomi Sigu
