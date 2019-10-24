@@ -15,6 +15,7 @@ def welcome(request):
     current_user = request.user
     projects = Projects.get_all_projects()
     return render (request, 'home.html', {"projects":projects})
+    
 @login_required
 def profile(request):
   current_user = request.user
