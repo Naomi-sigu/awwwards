@@ -2,25 +2,20 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Profile, Projects
 from django.contrib.auth.models import User
-from . forms import UpdateUser,UpdateProfile, ProjectsForm
-from django.contrib import messages
+from . forms import UpdateUser,UpdateProfile, ProjectsFormfrom django.contrib import messages
 from django.db.models import Q
 from django.views.generic import CreateView
-
-
 # Create your views here.
 @login_required(login_url='/accounts/login/')
 def welcome(request):
     current_user = request.user
     projects = Projects.get_all_projects()
     return render (request, 'home.html', {"projects":projects})
-
 @login_required
 def profile(request):
   current_user = request.user
   projects = Projects.objects.filter(user_id = current_user.id).all
   return render(request,'profile.html',{"projects":projects})    
-
 @login_required
 def update_profile(request):
   if request.method == 'POST':
@@ -40,8 +35,6 @@ def update_profile(request):
     'p_form':p_form
   }
   return render(request,'update_profile.html', params)
-
-
 @login_required(login_url='/accounts/login/')
 def search(request):
    if 'title' in request.GET and request.GET['title']:
@@ -55,7 +48,6 @@ def search(request):
    else:
        message = "You haven't searched for any Pics"
        return render(request, 'search.html',{"message":message})
-
 @login_required(login_url='/accounts/login/')
 def submission(request):
     current_user = request.user
@@ -69,8 +61,6 @@ def submission(request):
     else:
         form = ProjectsForm()
     return render(request, 'submit.html', {"form": form})
-
-
 class ProjectCreatView(CreateView):
     model = Projects
     fields = ['title','image' ,'project_description','site','country']
