@@ -55,7 +55,7 @@ def search(request):
    else:
        message = "You haven't searched for any Pics"
        return render(request, 'search.html',{"message":message})
-       
+
 @login_required(login_url='/accounts/login/')
 def submission(request):
     current_user = request.user
@@ -69,6 +69,7 @@ def submission(request):
     else:
         form = ProjectsForm()
     return render(request, 'submit.html', {"form": form})
+    
 class ProjectCreatView(CreateView):
     model = Projects
     fields = ['title','image' ,'project_description','site','country']
