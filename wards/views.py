@@ -15,12 +15,13 @@ def welcome(request):
     current_user = request.user
     projects = Projects.get_all_projects()
     return render (request, 'home.html', {"projects":projects})
-    
+
 @login_required
 def profile(request):
   current_user = request.user
   projects = Projects.objects.filter(user_id = current_user.id).all
-  return render(request,'profile.html',{"projects":projects})    
+  return render(request,'profile.html',{"projects":projects})   
+   
 @login_required
 def update_profile(request):
   if request.method == 'POST':
