@@ -8,11 +8,12 @@ class UpdateUser(forms.ModelForm):
   class Meta:
     model = User
     fields = ['username','email']
-    
+
 class UpdateProfile(forms.ModelForm):
   class Meta:
     model = Profile
     fields = ['profile_pic','bio']
+    
 class ProjectsForm(forms.ModelForm):
 
     class Meta:
