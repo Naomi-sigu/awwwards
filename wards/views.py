@@ -41,7 +41,7 @@ def update_profile(request):
     'p_form':p_form
   }
   return render(request,'update_profile.html', params)
-  
+
 @login_required(login_url='/accounts/login/')
 def search(request):
    if 'title' in request.GET and request.GET['title']:
@@ -55,6 +55,7 @@ def search(request):
    else:
        message = "You haven't searched for any Pics"
        return render(request, 'search.html',{"message":message})
+       
 @login_required(login_url='/accounts/login/')
 def submission(request):
     current_user = request.user
