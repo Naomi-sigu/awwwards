@@ -6,7 +6,9 @@ from . forms import UpdateUser,UpdateProfile, ProjectsForm
 from django.contrib import messages
 from django.db.models import Q
 from django.views.generic import CreateView
+
 # Create your views here.
+
 @login_required(login_url='/accounts/login/')
 def welcome(request):
     current_user = request.user
