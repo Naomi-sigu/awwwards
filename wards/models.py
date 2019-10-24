@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 import datetime as dt
 from django.dispatch import receiver
-
 from django.db.models.signals import post_save
 from django_countries.fields import CountryField
 
@@ -14,7 +13,6 @@ class Profile(models.Model):
   bio = models.TextField()
   user = models.OneToOneField(User,on_delete = models.CASCADE)
   
-
   @receiver(post_save , sender = User)
   def create_profile(instance,sender,created,**kwargs):
     if created:
