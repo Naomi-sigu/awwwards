@@ -42,8 +42,7 @@ class Projects(models.Model):
     def get_post(cls, id):
         projects = Projects.objects.filter(user=id)
         return projects
-
-    @classmethod
+     @classmethod
     def search_by_title(cls,search_term):
         projects = cls.objects.filter(title__icontains=search_term)
         return projects   
